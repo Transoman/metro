@@ -48,8 +48,7 @@ export default defineConfig(({ mode }) => {
 			],
 		},
 
-		base: env.SITE_ENV === "production" ? themeRoot + "/dist" : "/",
-		mode: env.SITE_ENV || "development",
+		base: mode === "production" ? themeRoot + "/dist" : "/",
 		// base: process.env.SITE_ENV === "production" ? themeRoot + "/dist" : "/",
 		// mode: process.env.SITE_ENV === "production" ?? "development",
 
