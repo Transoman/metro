@@ -7,13 +7,14 @@ on:
     branches: [ dev, main ]
 
 jobs:
-  build:
-    name: Build (Vite)
+  deploy-dev:
+    name: Deploy to DEV
+    if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+        
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -24,18 +25,6 @@ jobs:
 
       - name: Build assets
         run: npm run build
-
-      - name: List built files
-        run: ls -la ./wp-content/themes/metro/dist || true
-
-  deploy-dev:
-    name: Deploy to DEV
-    needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
 
       - name: Start ssh-agent and add key
         uses: webfactory/ssh-agent@v0.5.4
@@ -56,7 +45,6 @@ jobs:
 
   deploy-prod:
     name: Deploy to PROD
-    needs: build
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: production     # -> використовує environment-level secrets/правила
