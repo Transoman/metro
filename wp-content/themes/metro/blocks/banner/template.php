@@ -44,7 +44,7 @@ $term_name = ($taxonomy === 'type' && $term === '-1' || $taxonomy === 'neighborh
 
 ?>
 <div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?>">
-    <div class="text">
+    <div class="text test">
         <h3><?php echo $banner_text ?></h3>
         <?php
         if ($banner_button): ?>
