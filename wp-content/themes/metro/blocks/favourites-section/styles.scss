@@ -1,0 +1,223 @@
+@import "~css/_mixins.scss";
+@import "~css/listing-card.scss";
+
+
+.favorites-list{
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+.favorites-list .listings .blocks{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -14.99px;
+}
+
+.favorites-list .listings .blocks.hide{
+    display: none;
+}
+
+.favorites-list .listings .empty{
+    border-radius: var(--mm-border-radius);
+    border: 1px solid var(--mm-placeholder-grey-1);
+    padding: 20px 20px 60px;
+    text-align: center;
+}
+
+.favorites-list .listings .empty.hide{
+    display: none;
+}
+
+.favorites-list .listings .empty img{
+    max-width: 200px;
+}
+
+.favorites-list .listings .empty h3{
+    font-family: var(--mm-primary-font-family);
+    font-size: 20px;
+    color: var(--mm-black-color);
+    max-width: 430px;
+    margin: 0 auto 10px;
+}
+
+.favorites-list .listings .empty p{
+    max-width: 350px;
+    margin: 0 auto 40px;
+    color: var(--mm-grey-color);
+}
+
+.favorites-list .listings .empty a{
+    color: var(--mm-navy-color);
+    font-weight: 700;
+    display: inline-block;
+    padding: 15.1px 30px;
+    background: var(--mm-yellow-color);
+    border-radius: var(--mm-button-radius);
+}
+
+.favorites-list .listings .blocks .no-results{
+    padding-left: 15px;
+}
+
+.favorites-list .listings .blocks .block{
+    width: 33.333%;
+    padding: 15px;
+    position: relative;
+}
+
+.favorites-list .pagination{
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.favorites-list .pagination.hide{
+    display: none;
+}
+
+.favorites-list .pagination form{
+    display: none;
+}
+
+.favorites-list .pagination ul{
+    display: flex;
+}
+
+.favorites-list .pagination ul li a, .favorites-list .pagination ul li span{
+    width: 54px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favorites-list .pagination ul li a, .favorites-list .pagination ul li span{
+    font-weight: 700;
+    color: var(--mm-blue-color);
+    position: relative;
+    z-index: 1;
+    line-height: 0;
+}
+
+.favorites-list .pagination ul li.current{
+    position: relative;
+}
+
+.favorites-list .pagination ul li span.current{
+    color: var(--mm-grey-color);
+}
+
+.favorites-list .pagination ul li span.current:before, .favorites-list .pagination ul li a:hover:before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--mm-black-color);
+    opacity: .04;
+    border-radius: 50%;
+}
+
+.favorites-list .pagination .button{
+    display: flex;
+    align-items: center;
+    height: 54px;
+    border: 1px solid var(--mm-blue-color);
+    padding: 16px 26px;
+    border-radius: var(--mm-button-radius);
+}
+
+.favorites-list .pagination .button:not(.disabled):hover{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), var(--mm-blue-grey-color);
+}
+
+.favorites-list .pagination .button span{
+    color: var(--mm-blue-color);
+    font-weight: 700;
+}
+
+.favorites-list .pagination .button svg{
+    width: 11.5px;
+    height: 23px;
+}
+
+.favorites-list .pagination .button svg path{
+    stroke: var(--mm-blue-color);
+}
+
+.favorites-list .pagination .button.disabled{
+    pointer-events: none;
+    cursor: default;
+    border: 1px solid var(--mm-placeholder-grey-2);
+}
+
+.favorites-list .pagination .button.disabled span{
+    color: var(--mm-placeholder-grey-1);
+}
+
+.favorites-list .pagination .button.disabled svg path{
+    stroke:var(--mm-placeholder-grey-1);
+}
+
+.favorites-list .pagination .button.prev{
+    padding-right: 30px;
+}
+
+.favorites-list .pagination .button.prev svg{
+    margin-right: 16.5px;
+}
+
+.favorites-list .pagination .button.next{
+    flex-direction: row-reverse;
+    padding-left: 30px;
+}
+
+.favorites-list .pagination .button.next svg{
+    margin-left: 16.5px;
+}
+
+@media(max-width: 992px){
+
+    .favorites-list .listings .blocks .block{
+        width: 50%;
+    }
+
+    .favorites-list .pagination{
+        align-items: center;
+    }
+
+    .favorites-list .pagination .button{
+        padding: 16px 18px;
+    }
+
+    .favorites-list .pagination ul li a, .favorites-list .pagination ul li span{
+        width: 47px;
+        height: 47px;
+    }
+
+}
+@media(max-width: 768px){
+
+    .favorites-list .pagination ul{
+        display: none;
+    }
+
+}
+@media(max-width: 576px) {
+
+    .favorites-list{
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+
+    .favorites-list .listings{
+        padding-top: 5px;
+    }
+
+    .favorites-list .listings .blocks .block{
+        width: 100%;
+    }
+    
+}

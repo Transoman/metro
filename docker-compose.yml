@@ -1,0 +1,110 @@
+version: "3.7"
+services:
+  back:
+      build:
+        context: ./_docker/php-fpm
+        args:
+          - PHP_VERSION=${PHP_VERSION}
+          - WP_VERSION=${WP_VERSION}
+      volumes:
+        - ./_docker/php-fpm/php.ini:/usr/local/etc/php/php.ini:ro
+        - ./wp-content:/var/www/html/wp-content
+        - ./_docker/php-fpm/check-and-init.sh:/check-and-init.sh
+        - ./scripts:/var/www/html/scripts
+        - wordpress:/var/www/html
+      environment:
+        - SITE_ENV=${SITE_ENV}
+        - DOCKER_VITE_PORT=${DOCKER_VITE_PORT}
+        - DOCKER_SITE_PORT=${DOCKER_SITE_PORT}
+        - SITE_TITLE=${SITE_TITLE}
+        - SITE_URL=${SITE_URL}
+        - SITE_USER=${SITE_USER}
+        - SITE_USER_PASSWPRD=${SITE_USER_PASSWPRD}
+        - SITE_USER_EMAIL=${SITE_USER_EMAIL}
+        - WORDPRESS_TABLE_PREFIX=${SITE_TABLE_PREFIX}
+        - WORDPRESS_DB_NAME=${DB_DATABASE}
+        - WORDPRESS_DB_HOST=${DB_HOST}
+        - WORDPRESS_DB_USER=${DB_USERNAME}
+        - WORDPRESS_DB_PASSWORD=${DB_PASSWORD}
+        - WP_ENVIRONMENT_TYPE=development
+        - SMTP_HOUST=${SMTP_HOST}
+        - SMTP_PORT=${SMTP_PORT}
+        - SMTP_AUTH=${SMTP_AUTH}
+        - SMTP_USERNAME=${SMTP_USERNAME}
+        - SMTP_PASSWORD=${SMTP_PASSWORD}
+        - SMTP_SECURE=${SMTP_SECURE}
+        - SMTP_FROM=${SMTP_FROM}
+        - SMTP_FROMNAME=${SMTP_FROMNAME}
+      links:
+        - db
+      # restart: always
+      networks:
+        - wp-network
+  front:
+      image: nginx:alpine
+      ports:
+          - "${DOCKER_SITE_PORT}:443"
+      volumes:
+          - ./_docker/nginx/conf.d/wordpress.conf.template:/etc/nginx/conf.d/wordpress.conf.template:ro
+          - ./_docker/nginx/ssl:/etc/nginx/ssl
+          - ./wp-content:/var/www/html/wp-content
+          - wordpress:/var/www/html
+          - phpmyadmin:/var/www/html/pma:ro
+      command: /bin/sh -c "envsubst '$${DOCKER_PROD_WP_CONTENT},$${DOCKER_SITE_PORT}' < /etc/nginx/conf.d/wordpress.conf.template > /etc/nginx/conf.d/wordpress.conf && rm -f /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+      environment:
+        - DOCKER_PROD_WP_CONTENT=${DOCKER_PROD_WP_CONTENT}
+        - DOCKER_SITE_PORT=${DOCKER_SITE_PORT}
+      links:
+          - back
+      # restart: always
+      networks:
+        - wp-network
+  db:
+      image: mariadb
+      volumes:
+        - ./_docker/mariadb/custom.cnf:/etc/mysql/conf.d/custom.cnf
+        - ./database:/var/lib/mysql/db
+        - mariadb:/var/lib/mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+        - MYSQL_DATABASE=${DB_DATABASE}
+        - MYSQL_USER=${DB_USERNAME}
+        - MYSQL_PASSWORD=${DB_PASSWORD}
+      # restart: always
+      networks:
+        - wp-network
+  phpmyadmin:
+      depends_on:
+        - db
+      image: phpmyadmin:fpm-alpine
+      # restart: always
+      environment:
+        - PMA_HOST=${DB_HOST}
+        - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+        - UPLOAD_LIMIT=10G
+        - MEMORY_LIMIT=10G
+        - MAX_EXECUTION_TIME=30000
+      volumes:
+# both volumes required - first for init, next for functioning
+        - phpmyadmin:/var/www/html
+        - phpmyadmin:/var/www/html/pma
+      networks:
+        - wp-network
+  smtp:
+      image: axllent/mailpit
+      restart: always
+      environment:
+        - MP_WEBROOT=/smtp
+        - MP_SMTP_RELAY_CONFIG=/smtp.conf
+        - MP_SMTP_RELAY_ALL=true
+      volumes:
+        - ./smtp.conf:/smtp.conf
+      networks:
+        - wp-network
+networks:
+  wp-network:
+    driver: bridge
+volumes:
+  wordpress:
+  mariadb:
+  phpmyadmin:

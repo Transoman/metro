@@ -1,0 +1,98 @@
+@import "~css/_mixins.scss";
+
+.list-wih-heading-section {
+    padding: 100px 0;
+
+    .content {
+        h2 {
+            margin-bottom: 60px;
+        }
+
+        ul {
+            counter-reset: list;
+
+            li {
+                color: var(--mm-text-color);
+                position: relative;
+                border-top: 1px solid var(--mm-list-border-color);
+                padding: 40px 0 40px 90px;
+
+                &:last-of-type{
+                    padding-bottom: 0;
+                }
+
+                > :last-child{
+                    margin-bottom: 0;
+                }
+
+                &::before {
+                    counter-increment: list;
+                    content: counter(list);
+                    position: absolute;
+                    left: 0;
+                    top: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid var(--mm-list-border-color);
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    font-size: 24px;
+                    color: var(--mm-list-border-color);
+
+                }
+
+                a {
+                    text-decoration: underline;
+                }
+
+                p {
+                    margin-bottom: 10px;
+                }
+
+
+
+                h3 {
+                    font-family: var(--mm-primary-font-family);
+                    font-size: 22px;
+                    margin-bottom: 20px;
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 576px){
+    .list-wih-heading-section{
+        padding: 60px 0;
+
+        .content{
+            h2{
+                margin-bottom: 40px;
+            }
+
+            ul{
+                li{
+                    padding: 30px 0 30px 50px;
+
+                    &::before{
+                        width: 30px;
+                        height: 30px;
+                        top: 30px;
+                        font-size: 16px;
+                    }
+
+                    h3{
+                        margin-bottom: 25px;
+                    }
+
+                    p{
+                        font-size: var(--mm-body-sm-text-size);
+                    }
+                }
+            }
+        }
+    }
+}

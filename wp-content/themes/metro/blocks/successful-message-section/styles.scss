@@ -1,0 +1,82 @@
+@import "~css/_mixins.scss";
+
+.successful-message {
+    background: var(--mm-blue-grey-color);
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 200px;
+}
+
+.successful-message .content {
+    background-color: var(--mm-white-color);
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.10);
+    border-radius: var(--mm-border-radius);
+    padding: 120px 60px 160px;
+}
+
+.successful-message .content .text {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.successful-message .content .text h2 {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.successful-message .content .text p {
+    font-size: var(--mm-heading-size);
+    font-weight: 700;
+    color: var(--mm-card-text-color);
+    margin-bottom: 40px;
+    position: relative;
+}
+.successful-message .content .text p::after {
+    content: var(--check-in-circle-icon);
+    display: inline-block;
+    // margin-bottom: 10px;
+    margin-right: 10px;
+    height: 32px;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    top: 7px;
+    left: 0
+}
+.successful-message .content .text p::before {
+    content: " ";
+    // content: var(--check-in-circle-icon);
+    display: inline-block;
+    // // margin-bottom: 10px;
+    margin-right: 10px;
+    height: 32px;
+    // width: 32px;
+    aspect-ratio: 1 / 1;
+}
+
+.successful-message .content .text button {
+    font-weight: 700;
+    color: var(--mm-blue-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 576px) {
+    .successful-message {
+        padding-top: 40px;
+        height: auto;
+        padding-bottom: 40px;
+    }
+
+    .successful-message .content .text p {
+        font-size: var(--mm-body-sm-text-size);
+    }
+}
+
+@media (max-width: 375px) {}

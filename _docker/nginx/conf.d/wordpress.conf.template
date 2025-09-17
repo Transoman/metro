@@ -1,0 +1,82 @@
+server {
+    listen 443 ssl;
+    server_name _;
+    root /var/www/html;
+    index index.php;
+    include ssl/ssl.conf;
+
+    client_max_body_size 2G;
+    charset UTF-8;
+    server_tokens off;
+    gzip on;
+    gzip_min_length 1024;
+    gzip_buffers 12 32k;
+    gzip_types application/xml text/css application/x-javascript application/javascript application/font-woff;
+    gzip_http_version 1.0;
+    gzip_vary  on;
+    access_log off;
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+    keepalive_timeout 15;
+    merge_slashes off;
+    fastcgi_read_timeout 300;
+    error_page 497 "https://$host:${DOCKER_SITE_PORT}$request_uri";
+
+    set $production_host "${DOCKER_PROD_WP_CONTENT}";
+
+    location ~ ^/pma/(.*\.(js|css|gif|jpg|png))$ {
+        alias /var/www/html/pma/$1;
+    }
+
+    location ~ ^/smtp {
+        proxy_set_header   X-Forwarded-For $remote_addr;
+        proxy_set_header   Host $http_host;
+        proxy_set_header Upgrade websocket;
+        proxy_set_header Connection Upgrade;
+        proxy_pass http://smtp:8025;
+    }
+
+    location ~ ^/pma(.*\.php)$ {
+        fastcgi_pass phpmyadmin:9000;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param PATH_INFO $fastcgi_path_info;
+        fastcgi_param HTTP_X_FORWARDED_PROTO https;
+        fastcgi_read_timeout 60000;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~* ^(/wp-content/uploads/.*) {
+        try_files $uri $uri/ @production;
+    }
+
+    location @production {
+        resolver 8.8.8.8;
+        proxy_set_header Host $production_host;
+        proxy_ssl_server_name on;
+        proxy_intercept_errors on;
+        proxy_pass https://$production_host$uri;
+        error_page 404 = @index;
+    }
+
+    location @index {
+        try_files /index.php?$args =404;
+    }
+
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass back:9000;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param PATH_INFO $fastcgi_path_info;
+        fastcgi_param HTTP_X_FORWARDED_PROTO https;
+    }
+}

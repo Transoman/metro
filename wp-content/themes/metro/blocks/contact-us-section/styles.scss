@@ -1,0 +1,180 @@
+@import "~css/_mixins.scss";
+
+.contact-form {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .content {
+        background: var(--mm-primary-bg-color);
+        padding: 60px 100px 60px;
+    }
+
+    h2 {
+        margin-bottom: 40px;
+
+        + {
+            p {
+                margin-bottom: 40px;
+                color: var(--mm-grey-color);
+            }
+        }
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+
+        label{
+            display: none;
+        }
+
+        .wpcf7-form-control-wrap {
+            &:not(.full-width) {
+                width: 50%;
+                padding: 10px 15px;
+
+                &:first-of-type {
+                    padding-top: 0;
+                    padding-left: 0;
+                }
+
+                &:nth-of-type(2n) {
+                    padding-right: 0;
+                }
+
+                &:nth-of-type(2) {
+                    padding-top: 0;
+                }
+
+                &:nth-of-type(2n + 1) {
+                    padding-left: 0;
+                }
+
+            }
+
+            input {
+                border: 1px solid var(--mm-placeholder-grey-2);
+            }
+
+            textarea {
+                border: 1px solid var(--mm-placeholder-grey-2);
+            }
+        }
+
+        br {
+            display: none;
+        }
+
+        .wpcf7-form-control-wrap[data-name*='message'] {
+            width: 100%;
+            padding: 10px 0;
+            display: flex;
+        }
+
+        input {
+            padding: 8px 19px 5px;
+            width: 100%;
+            background: transparent;
+
+            &::placeholder {
+                color: var(--mm-placeholder-grey-color);
+            }
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 9px 20px;
+            background: transparent;
+
+            &::placeholder {
+                color: var(--mm-placeholder-grey-color);
+            }
+        }
+
+        button[type="submit"] {
+            background: var(--mm-yellow-color);
+            color: var(--mm-navy-color);
+            border: 0;
+            font-weight: 700;
+            padding: 15px 30px;
+            margin-top: 30px;
+            border-radius: var(--mm-button-radius);
+            transition: background .1s ease;
+            cursor: pointer;
+
+            &:hover {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), var(--mm-yellow-color);
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-form {
+        .content {
+            padding: 30px 50px 30px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-form {
+        padding-top: 0;
+        padding-bottom: 0;
+        background-image: none !important;
+
+        .content {
+            padding: 60px 20px 40px;
+            background-color: var(--mm-blue-grey-color);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+
+            + {
+                p {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        form {
+            .wpcf7-form-control-wrap {
+                &:not(.full-width) {
+                    width: 100%;
+                    padding: 0 0 10px;
+                }
+            }
+
+            input {
+                padding: 7px 19px 10px;
+                background: var(--mm-primary-bg-color);
+            }
+
+            .wpcf7-form-control-wrap.full-width {
+                padding: 0;
+            }
+
+            textarea {
+                height: 120px;
+                background: var(--mm-primary-bg-color);
+            }
+
+            button[type="submit"] {
+                max-width: 220px;
+                width: 100%;
+                text-align: center;
+                padding: 17px 30px;
+                margin: 30px auto 0;
+            }
+        }
+    }
+
+    .contact-form {
+        .container {
+            padding: 0;
+        }
+    }
+}

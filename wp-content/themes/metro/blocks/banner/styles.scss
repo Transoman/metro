@@ -1,0 +1,50 @@
+@import "~css/_mixins.scss";
+
+.banner {
+    padding: 40px 15px;
+    margin-top: 60px;
+    background-color: var(--mm-blue-grey-color);
+    border-radius: var(--mm-border-radius);
+    width: 100%;
+}
+
+.banner .text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .text h3 {
+    margin: 0 30px 0 0;
+}
+
+.banner .text button {
+    color: var(--mm-blue-color);
+    border: 1px solid var(--mm-blue-color);
+    font-weight: 700;
+    border-radius: var(--mm-button-radius);
+    padding: 15.5px 29.4px;
+    margin-bottom: 0;
+    white-space: nowrap;
+    background: transparent;
+    cursor: pointer;
+}
+
+.banner .text button:hover{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), var(--mm-blue-grey-color);
+}
+
+.banner .text button:after {
+    content: none;
+}
+
+@media (max-width: 576px) {
+    .banner .text{
+        flex-direction: column;
+    }
+
+    .banner .text h3 {
+        margin: 0 0 20px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,8 @@
+@import "styles.scss";
+@import "accessibility.scss";
+
+body.front,
+body.page {
+	@extend %body;
+
+}

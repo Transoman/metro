@@ -1,0 +1,179 @@
+@import "~css/_mixins.scss";
+
+.email-sender {
+    background: var(--mm-blue-grey-color);
+    height: 75vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    min-height: 683px;
+}
+
+.email-sender .content .text {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.email-sender .content .text h2 {
+    margin-bottom: 5px;
+}
+
+.email-sender .content .text p {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--mm-grey-color);
+}
+
+.email-sender .content .form {
+    background: var(--mm-primary-bg-color);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    border: 1px solid var(--mm-border-color);
+    padding: 80px 100px 100px;
+    margin-bottom: 30px;
+
+}
+
+.email-sender .content .form form label {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: var(--mm-grey-color);
+    margin-bottom: 20px;
+}
+
+.email-sender .content .form .no-field {
+    width: 100%;
+    padding: 15px 27px;
+    p {
+        text-align: center;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--mm-grey-color);
+    }
+}
+
+.email-sender .content .form .field {
+    border: 1px solid var(--mm-border-color);
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: var(--mm-button-radius);
+    display: flex;
+    padding: 2px;
+}
+
+.email-sender .content .form .field input {
+    width: 100%;
+    padding: 15px 27px;
+    border: 0;
+    border-radius: var(--mm-button-radius);
+    outline: 0;
+    font-weight: 700;
+    color: var(--mm-grey-color);
+}
+
+.email-sender .content .additional-info {
+    display: flex;
+}
+
+.email-sender .content .additional-info p {
+    padding: 0 20px;
+    color: var(--mm-grey-color);
+    position: relative;
+}
+
+.email-sender .content .additional-info p:after {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background: var(--mm-placeholder-grey-1);
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0;
+}
+
+.email-sender .content .additional-info p:first-of-type {
+    padding-left: 0;
+}
+
+.email-sender .content .additional-info p:last-of-type:after {
+    content: none;
+}
+
+.email-sender .content .additional-info button {
+    border: 1px solid var(--mm-blue-color);
+    color: var(--mm-blue-color);
+    line-height: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 17.5px 30px;
+    border-radius: var(--mm-button-radius);
+    white-space: nowrap;
+    background: transparent;
+    align-self: center;
+}
+
+.email-sender .content .additional-info button:disabled {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), var(--mm-blue-grey-color);
+}
+
+.success-message p {
+    text-align: center;
+}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 768px) {
+    .email-sender .content .form {
+        padding: 40px 60px 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .email-sender {
+        padding-top: 40px;
+        height: auto;
+        padding-bottom: 40px;
+    }
+
+    .email-sender .content .text p {
+        font-size: var(--mm-body-sm-text-size);
+    }
+
+    .email-sender .content .additional-info {
+        flex-direction: column;
+    }
+
+    .email-sender .content .additional-info p {
+        padding: 20px 0;
+        font-size: var(--mm-body-xs-text-size);
+    }
+
+    .email-sender .content .additional-info p:after {
+        width: 100%;
+        height: 1px;
+        top: 100%;
+        left: 0;
+    }
+
+    .email-sender .content .form {
+        padding: 40px 20px;
+        margin-bottom: 10px;
+    }
+
+    .email-sender .content .form form label {
+        padding: 0 13px;
+    }
+
+    .email-sender .content .form .field input {
+        padding: 7px 18px;
+        font-size: var(--mm-body-sm-text-size);
+    }
+
+    .email-sender .content .additional-info button {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 375px) {}

@@ -1,0 +1,122 @@
+section.mm-section .heading a:not(.default-link){
+    color: var(--mm-blue-color);
+    font-weight: 700;
+    line-height: 20px;
+    padding: 16.5px 29px;
+    border: 1px solid var(--mm-blue-color);
+    border-radius: var(--mm-button-radius);
+    transition: background .1s ease;
+    text-transform: capitalize;
+}
+
+section.mm-section .heading{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+section.mm-section .heading .controllers {
+    margin-right: 10px;
+}
+
+section.mm-section .heading .heading-part, section.mm-section  .heading .controllers {
+    display: flex;
+    align-items: center;
+}
+
+section.mm-section .heading .heading-part{
+    flex-shrink: 0;
+}
+
+section.mm-section .heading .btn{
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--mm-blue-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity .1s ease, background .1s ease;
+    background: transparent;
+}
+
+section.mm-section .heading .btn:first-of-type {
+    margin-right: 10px;
+}
+
+section.mm-section .heading .btn.swiper-button-disabled {
+    opacity: .2;
+    cursor: auto;
+}
+
+section.mm-section.full-bg .heading .btn:not(.swiper-button-disabled):hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), var(--mm-blue-grey-color);
+}
+
+section.mm-section .heading .btn:not(.swiper-button-disabled):hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), var(--mm-white-color);
+}
+
+section.mm-section.full-bg .heading a:not(.default-link):hover{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), var(--mm-blue-grey-color);
+}
+
+section.mm-section .heading a:not(.default-link):hover{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), var(--mm-white-color);
+}
+
+section.mm-section  .heading .btn.swiper-button-disabled {
+    opacity: .2;
+    cursor: auto;
+}
+
+section.mm-section .heading .btn.swiper-button-disabled:hover{
+    background: unset;
+}
+
+section.mm-section .heading .btn:first-of-type {
+    margin-right: 10px;
+}
+
+section.mm-section .heading .btn:first-of-type svg {
+    margin-left: -5px;
+}
+
+section.mm-section .heading .btn:last-of-type svg {
+    margin-right: -5px;
+}
+
+section.mm-section .heading .btn svg {
+    width: 15px;
+    height: 24px;
+}
+
+section.mm-section .heading .btn svg path {
+    fill: var(--mm-blue-color);
+}
+
+@media(max-width: 768px){
+    section.mm-section .heading a:not(.default-link){
+        padding: 16px 29px;
+    }
+    section.mm-section .heading a{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 220px;
+        text-align: center;
+        top: calc(100% - 94px);
+    }
+}
+
+@media(max-width: 576px){
+    section.mm-section .heading .controllers{
+        display: none;
+    }
+    section.mm-section .heading{
+        display: block;
+    }
+}
+
+//Accessibility CHANGES 

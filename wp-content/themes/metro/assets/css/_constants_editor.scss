@@ -1,0 +1,4 @@
+$base_z_index: 10; // Start from 10 otherwise block will be on top of z-index lower than 0;
+div.wp-block-post-content {
+	--base-z-index: #{$base_z_index};
+}

@@ -1,0 +1,174 @@
+{
+	"type": "project",
+	"name": "profi-dev/wp-theme",
+	"description": "Profi.dev wordpress theme starter kit.",
+	"license": "Commerce",
+	"authors": [
+		{
+			"name": "Profi.Dev",
+			"homepage": "https://profi.dev"
+		}
+	],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true,
+			"ffraenz/private-composer-installer": true
+		},
+		"optimize-autoloader": true,
+		"preferred-install": "dist",
+		"sort-packages": true
+	},
+	"extra": {
+		"installer-paths": {
+			"wp-content/mu-plugins/{$name}/": [
+				"type:wordpress-muplugin",
+				"wpackagist-plugin/svg-support",
+				"wpengine/advanced-custom-fields-pro"
+			],
+			"wp-content/plugins/{$name}/": [
+				"type:wordpress-plugin"
+			],
+			"wp-content/themes/{$name}/": [
+				"type:wordpress-theme"
+			],
+			"wp-content/{$name}/": [
+				"type:wordpress-dropin"
+			]
+		},
+		"wordpress-install-dir": "wordpress"
+	},
+	"scripts": {
+		"post-root-package-install": [
+			"@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+		],
+		"post-install-cmd": [],
+		"post-update-cmd": [],
+		"pre-install-cmd": [
+		]
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://my.yoast.com/packages/"
+		},
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		},
+		{
+			"type": "composer",
+			"url": "https://connect.advancedcustomfields.com"
+		},
+		{
+			"type": "composer",
+			"url": "https://api.nextendweb.com/v1/composer/"
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "ideasilo/contact-form-7",
+				"version": "5.9.6",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://downloads.wordpress.org/plugin/contact-form-7.{%VERSION}.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "nextendweb/nextend-facebook-connect",
+				"version": "3.1.13",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://downloads.wordpress.org/plugin/nextend-facebook-connect.{%VERSION}.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "mike.zwobble/mammoth-docx-converter",
+				"version": "1.21.0",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://downloads.wordpress.org/plugin/mammoth-docx-converter.{%VERSION}.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "zohomail/zeptomail",
+				"version": "3.1.1",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://downloads.wordpress.org/plugin/transmail.{%VERSION}.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "alttext/alttext-ai",
+				"version": "1.6.0",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://downloads.wordpress.org/plugin/alttext-ai.{%VERSION}.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "zohoflow/zohoflow",
+				"version": "2.6.0",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://downloads.wordpress.org/plugin/zoho-flow.{%VERSION}.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "package/wordpress-seo",
+				"version": "22.9",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://downloads.wordpress.org/plugin/wordpress-seo.{%VERSION}.zip"
+				}
+			}
+		}
+	],
+	"require": {
+		"php": ">=8.0",
+		"alttext/alttext-ai": "1.6.0",
+		"composer/installers": "^1.0 || ^2.0",
+		"ffraenz/private-composer-installer": "^5.0",
+		"ideasilo/contact-form-7": "5.9.6",
+		"mike.zwobble/mammoth-docx-converter": "1.21.0",
+		"nextendweb/nextend-facebook-connect": "3.1.13",
+		"nextendweb/nextend-social-login-pro": "3.1.13",
+		"package/wordpress-seo": "22.9",
+		"wpackagist-plugin/all-in-one-wp-migration": "^7.99",
+		"wpackagist-plugin/contact-form-entries": "1.4.0",
+		"wpackagist-plugin/image-alt-text": "2.0.0",
+		"wpackagist-plugin/svg-support": "2.5.5",
+		"wpackagist-plugin/wp-crontrol": "1.16.3",
+		"wpackagist-plugin/zoho-salesiq": "2.0.4",
+		"wpengine/advanced-custom-fields-pro": "6.3.1",
+		"yoast/wordpress-seo-premium": "22.9",
+		"zohoflow/zohoflow": "2.6.0",
+		"zohomail/zeptomail": "3.1.1"
+	}
+}

@@ -1,0 +1,83 @@
+@import "~css/_mixins.scss";
+
+.mm-address {
+	margin-top: 50px;
+}
+
+.mm-address .content {
+	padding: 100px 0;
+	display: flex;
+	flex-wrap: wrap;
+	border-top: 1px solid var(--mm-placeholder-grey-1);
+}
+
+.mm-address.full-bg .content {
+	border-bottom: none;
+	display: flex;
+}
+
+.address-map {
+	width: 68.43%;
+	padding-right: 30px;
+	margin-bottom: 50px;
+}
+
+.address-map__wrap {
+	width: 100%;
+	padding-right: 40px;
+	border-right: 1px solid var(--mm-border-color);
+}
+
+.mm-address__info {
+	width: 31.57%;
+}
+
+#address-map {
+	width: 100%;
+	padding-top: 48%;
+}
+
+.mm-address .mm-address__info h2 {
+	margin-bottom: 40px;
+	text-transform: capitalize;
+	width: 100%;
+}
+
+.mm-address .mm-address__info address,
+.mm-address .mm-address__info address * {
+	font-style: normal;
+	color: var(--mm-grey-color);
+	line-height: 2;
+}
+
+.mm-address .mm-address__info address img{
+	vertical-align: middle;
+	margin-bottom: 1px;
+	max-width: 208px;
+	max-height: 16px;
+}
+
+@media (max-width: 768px) {
+	.mm-address .content {
+		padding: 60px 0;
+	}
+
+	.mm-address .content h2 {
+		margin-bottom: 30px;
+	}
+
+	.address-map {
+		padding-right: 0;
+		width: 100%;
+		margin-bottom: 60px;
+	}
+
+	.address-map__wrap {
+		padding-right: 0;
+		border-right: 0;
+	}
+
+	.mm-address__info {
+		width: 100%;
+	}
+}

@@ -1,0 +1,133 @@
+@import "~css/_mixins.scss";
+
+.text-editor {
+    padding: 60px 0;
+}
+
+.text-editor.no-padding {
+    padding: 0;
+}
+
+.text-editor.no-top-padding {
+    padding-top: 0;
+    padding-bottom: 100px;
+}
+
+.text-editor.no-bottom-padding {
+    padding-bottom: 0;
+    padding-top: 100px;
+}
+
+.text-editor.no-padding .content,
+.text-editor.no-top-padding .content,
+.text-editor.no-bottom-padding .content,
+.text-editor.full-width .content {
+    width: 100%;
+}
+
+.text-editor .content {
+    width: 65.78%;
+}
+
+.text-editor .content h1,
+.text-editor .content h2,
+.text-editor .content h3,
+.text-editor .content h4,
+.text-editor .content h5,
+.text-editor .content h6 {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.text-editor.no-padding .content h1,
+.text-editor.no-padding .content h2,
+.text-editor.text-editor.no-padding .content h3,
+.text-editor.no-padding .content h4,
+.text-editor.text-editor.no-padding .content h5,
+.text-editor.no-padding .content h6 {
+    margin-bottom: 60px;
+}
+
+.text-editor.no-padding .content h2 {
+    font-size: var(--mm-h2-size);
+}
+
+.text-editor .content :first-child {
+    margin-top: 0;
+}
+
+.text-editor .content :last-child {
+    margin-bottom: 0;
+}
+
+.text-editor .content h2 {
+    font-size: 24px;
+}
+
+.text-editor .content h3 {
+    font-size: 20px;
+}
+
+.text-editor .content h4 {
+    font-size: 18px;
+}
+
+.text-editor .content p,
+.text-editor .content li,
+.text-editor .content a,
+.text-editor .content strong,
+.text-editor .content em {
+    margin-bottom: 10px;
+    color: var(--mm-grey-color);
+}
+
+.text-editor .content a {
+    text-decoration: underline;
+}
+
+.text-editor .content ul {
+    list-style: disc;
+}
+
+.text-editor .content ul,
+.text-editor .content ol {
+    list-style-position: inside;
+}
+
+@media (max-width: 768px) {
+    .text-editor .content {
+        width: 100%;
+    }
+}
+
+@media(max-width: 576px) {
+
+    .text-editor .content h1,
+    .text-editor .content h2,
+    .text-editor .content h3,
+    .text-editor .content h4,
+    .text-editor .content h5,
+    .text-editor .content h6 {
+        margin-top: 40px;
+    }
+
+    .text-editor .content h2 {
+        font-size: 20px;
+    }
+
+    .text-editor .content h3 {
+        font-size: 18px;
+    }
+
+    .text-editor .content h4 {
+        font-size: 16px;
+    }
+
+    .text-editor.no-top-padding {
+        padding-bottom: 60px;
+    }
+
+    .text-editor.no-bottom-padding {
+        padding-top: 60px;
+    }
+}

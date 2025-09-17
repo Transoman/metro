@@ -1,0 +1,56 @@
+@use "sass:math";
+
+$breakpoints: (
+	"sm": 500px,
+	"md": 768px,
+	"lg": 1024px,
+	"xl": 1200px,
+) !default;
+
+@mixin breakpoint($name, $param: 'min-width') {
+	@if not map-has-key($breakpoints, $name) {
+		@media ($param: $name) {
+			@content;
+		}
+	} @else {
+		@media ($param: map-get($breakpoints, $name)) {
+			@content;
+		}
+	}
+}
+
+@function toRem($pxValue) {
+	@return math.div($pxValue, 16px) * 1rem;
+}
+
+@function svg-encode($svg) {
+	$svgxmlns: ' xmlns="http://www.w3.org/2000/svg"';
+	@if not str-index($svg, $svgxmlns) {
+		$svg: str-insert($svg, $svgxmlns, 5);
+	}
+
+	$encode: (
+		'"': "%22",
+		"#": "%23",
+		"%": "%25",
+		"<": "%3C",
+		">": "%3E",
+		"{": "%7B",
+		"}": "%7D",
+	);
+
+	$string: "";
+	$character: "";
+
+	@for $i from 1 through str-length($svg) {
+		$character: str-slice($svg, $i, $i);
+
+		@if index(map-keys($encode), $character) {
+			$character: map-get($encode, $character);
+		}
+
+		$string: $string + $character;
+	}
+
+	@return url("data:image/svg+xml,#{$string}");
+}

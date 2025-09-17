@@ -1,0 +1,192 @@
+@import "~css/_mixins.scss";
+
+.testimonials{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.testimonials .content{
+
+}
+
+.testimonials .content .heading{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.testimonials .content .heading .controllers{
+    display: flex;
+    align-items: center;
+}
+
+.testimonials .content .heading .controllers .btn{
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--mm-blue-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity .1s ease, background .1s ease;
+    background: transparent;
+}
+
+.testimonials .content .heading .controllers .btn:first-of-type {
+    margin-right: 10px;
+}
+
+.testimonials .content .heading .controllers .btn.swiper-button-disabled{
+    opacity: .2;
+    cursor: auto;
+}
+
+.testimonials .content .heading .controllers .btn svg{
+    width: 15px;
+    height: 24px;
+}
+
+.testimonials .content .heading .controllers .btn:first-of-type svg{
+    margin-left: -5px;
+}
+
+.testimonials .content .heading .controllers .btn:last-of-type svg{
+    margin-right: -5px;
+}
+
+.testimonials .content .heading .controllers .btn svg path{
+    fill: var(--mm-blue-color);
+}
+
+.testimonials .content .heading .controllers .btn:not(.swiper-button-disabled):hover{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), var(--mm-white-color);
+}
+
+.testimonials .content .google-label{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.testimonials .content .google-label .text .top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+}
+
+.testimonials .content .google-label .text > span {
+    font-size: var(--mm-body-sm-text-size);
+    line-height: 24px;
+    color: var(--mm-placeholder-grey-color);
+}
+
+.testimonials .content .google-label .text .top span {
+    line-height: 24px;
+    font-size: 24px;
+    margin-right: 12px;
+    font-weight: 700;
+}
+
+.testimonials .content .stars {
+    padding-top: 3px;
+}
+
+.testimonials .content .star {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    display: inline-block;
+    height: 21px;
+    width: 21px;
+    margin-right: -2.4px;
+}
+
+.testimonials .content .star .inner {
+    background: var(--mm-yellow-color);
+    height: 100%;
+    width: 0%;
+}
+
+.testimonials .content .google-label .image {
+    flex-basis: 46px;
+    height: 47px;
+    margin-right: 10px;
+}
+
+.testimonials .content .blocks .block{
+    padding: 40px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--mm-border-color);
+    border-radius: var(--mm-border-radius);
+    background: var(--mm-primary-bg-color);
+}
+
+.testimonials .content .blocks .block .stars{
+    padding-top: 0;
+    margin-bottom: 26px;
+}
+
+.testimonials .content .blocks .block p{
+    color: var(--mm-grey-color);
+    margin-bottom: 10px;
+}
+
+.testimonials .content .blocks .block p:last-of-type{
+    margin-bottom: 26px;
+}
+
+.testimonials .content .blocks .block p.name{
+    margin-bottom: 5px;
+    color: var(--mm-black-color);
+    font-weight: 700;
+}
+
+.testimonials .content .blocks .block .time{
+    color: var(--mm-placeholder-grey-color);
+}
+
+@media(max-width: 1200px){
+
+}
+
+@media(max-width: 992px){
+
+}
+
+@media(max-width: 768px){
+    .testimonials .content .heading .controllers{
+        display: none;
+    }
+
+    .testimonials .content .heading{
+        margin-bottom: 30px;
+    }
+
+    .testimonials .content .blocks .block{
+        padding: 30px 20px;
+    }
+}
+
+@media(max-width: 576px){
+    .testimonials{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .testimonials .content .google-label .text .top span{
+        font-size: 20px;
+    }
+
+    .testimonials .content .blocks{
+        margin: 0 -20px;
+        padding: 0 20px;
+    }
+
+    .testimonials .content .blocks .block .stars, .testimonials .content .blocks .block p:not(.name):last-of-type{
+        margin-bottom: 20px;
+    }
+
+    .testimonials .content .blocks .block p.name{
+        margin-bottom: 8px;
+    }
+}

@@ -1,0 +1,307 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('~fonts/Lato-Bold.woff2') format('woff2'),
+        url('~fonts/Lato-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('~fonts/Lato-Semibold.woff2') format('woff2'),
+        url('~fonts/Lato-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('~fonts/Merriweather-Italic.woff2') format('woff2'),
+        url('~fonts/Merriweather-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('~fonts/Merriweather-Bold.woff2') format('woff2'),
+        url('~fonts/Merriweather-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('~fonts/Lato-Regular.woff2') format('woff2'),
+        url('~fonts/Lato-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('~fonts/Merriweather-Regular.woff2') format('woff2'),
+        url('~fonts/Merriweather-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ddd;
+    font-family: 'Lato';
+    font-size: 14px;
+    line-height: 1;
+}
+
+img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 24px;
+    line-height: 115%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.header {
+    max-width: 750px;
+    width: 100%;
+    margin: 4% auto 40px;
+}
+
+.header nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header nav a {
+    color: #333;
+    text-decoration: none;
+}
+
+.header nav button {
+    background: #043968;
+    border: 0;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.print {
+    background: #fff;
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.1);
+    padding: 38px 75px 75px;
+    min-height: 25.1cm;
+}
+
+.print .logo-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ededed;
+    margin-bottom: 30px;
+}
+
+.print .logo-part .logo {
+    max-width: 50%;
+    width: 100%;
+}
+
+.print .logo-part .logo img {
+    width: auto;
+    height: 100%;
+    max-height: 70px;
+}
+
+.print .listing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.print .listing-header .details,
+.print .listing-header .title {
+    width: 50%;
+}
+
+.print .listing-header .details {
+    text-align: right;
+}
+
+.print .listing-header .details p {
+    margin-bottom: 10px;
+}
+
+.print .listing-header .details p:last-of-type {
+    margin-bottom: 0;
+}
+
+.print .listing-main {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.print .listing-main .image {
+    width: 50%;
+}
+
+.print .listing-main .image img {
+    aspect-ratio: 300 / 246;
+}
+
+.print .listing-main .details {
+    padding-left: 15px;
+    width: 50%;
+}
+
+.print .listing-main .details table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.print .listing-main .details tr td {
+    border-top: 1px solid #ededed;
+    padding: 10px 0;
+    font-size: 14px;
+    width: 50%;
+}
+
+.print .listing-main .details tr:last-of-type td {
+    border-bottom: 1px solid #ededed;
+}
+
+.print .listing-description {
+    margin-bottom: 8%;
+}
+
+.print .listing-description p {
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.print .listing-description p.underline {
+    border-bottom: 1px solid;
+}
+
+.print .listing-tags {
+    margin-bottom: 40px;
+}
+
+.print .listing-tags ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px -10px;
+}
+
+.print .listing-tags ul li {
+    padding: 0 10px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.print .listing-broker {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.print .listing-broker .details {
+    width: 70%;
+    display: flex;
+}
+
+.print .listing-broker .image {
+    max-width: 160px;
+    display: flex;
+}
+
+.print .listing-broker .text {
+    padding-left: 10px;
+}
+
+.print .listing-broker h2 {
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.print .listing-broker p {
+    margin-bottom: 5px;
+}
+
+.print .listing-broker ul {
+    list-style: none;
+}
+
+.print .listing-broker ul li {
+    margin-bottom: 5px;
+}
+
+.print .listing-broker ul li.bold {
+    font-size: 21px;
+}
+
+.print .listing-broker ul li:last-of-type {
+    margin-bottom: 0;
+}
+
+.print .listing-broker .qrcode {
+    width: 100px;
+    height: 100px;
+}
+
+@media print {
+
+    html,
+    body {
+        height: 99%;
+    }
+
+    .print {
+        page-break-after: auto;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .print .listing-broker .image {
+        max-height: 110px;
+    }
+
+    .print .listing-tags {
+        margin-bottom: 30px;
+    }
+
+    .print .listing-main .details tr td {
+        padding: 8px 0;
+    }
+}

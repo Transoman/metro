@@ -1,0 +1,31 @@
+@import "grapesjs/dist/css/grapes.min.css";
+
+.tabs{
+    display: flex;
+
+    button{
+        background: transparent;
+        border: 0;
+        margin-right: 10px  ;
+        cursor: pointer;
+
+        background-color: #033664;
+        color: #fff;
+        font-size: 16px;
+        line-height: 140%;
+        padding: 10px;
+    }
+}
+
+.templates{
+    .template{
+        display: none;
+        &.active{
+            display: block;
+        }
+
+        textarea{
+            display: none;
+        }
+    }
+}

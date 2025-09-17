@@ -1,0 +1,205 @@
+@import "~css/_mixins.scss";
+
+.edit-user {
+	padding-top: 60px;
+	padding-bottom: 100px;
+}
+
+.edit-user .content fieldset {
+	border: 0;
+	padding: 60px 0;
+	display: flex;
+	align-items: flex-start;
+	max-width: 750px;
+	border-bottom: 1px solid var(--mm-border-color);
+}
+
+.edit-user .content fieldset:first-of-type {
+	padding-top: 0;
+}
+
+.edit-user .content fieldset .fields {
+	width: 74%;
+}
+
+.edit-user .content fieldset .title {
+	width: 26%;
+	padding-right: 30px;
+}
+
+.edit-user .content fieldset .fields .field input {
+	border-color: var(--mm-placeholder-grey-2);
+}
+
+.edit-user .content fieldset .title p {
+	font-size: 20px;
+}
+
+.edit-user .content fieldset .fields .field {
+	margin-bottom: 30px;
+}
+
+.edit-user .content fieldset .fields .field .input {
+	position: relative;
+}
+
+.edit-user .content fieldset .fields .field .input input {
+	padding-right: 50px;
+}
+
+.edit-user .content fieldset .fields .field input.invalid {
+	border: 1px solid #ca0404;
+}
+
+.edit-user .content fieldset .fields .field input.invalid:focus {
+	outline: 2px solid #ca0404;
+}
+
+.edit-user .content fieldset .fields .field button {
+	border: 0;
+	background: transparent;
+	display: flex;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 21px;
+	cursor: pointer;
+}
+
+.edit-user .content fieldset .fields .field:last-of-type {
+	margin-bottom: 0;
+}
+
+.edit-user .content fieldset .fields .field label {
+	color: var(--mm-grey-color);
+	margin-bottom: 10px;
+	display: block;
+}
+
+.edit-user .content .buttons {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	max-width: 750px;
+	margin-top: 20px;
+}
+
+.edit-user .content .buttons .submit {
+	margin-left: 10px;
+	min-width: 138px;
+}
+
+.edit-user .content .buttons .submit.loading {
+	color: transparent;
+	position: relative;
+}
+
+.edit-user .content .buttons .submit.loading::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 50%;
+	aspect-ratio: 1/1;
+	border-radius: 50px;
+	border: 5px solid var(--mm-white-color);
+	border-top-color: var(--mm-navy-color);
+	animation: loading-button .5s linear infinite;
+}
+
+@keyframes loading-button {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+.edit-user .content .buttons .submit:hover {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)),
+		var(--mm-yellow-color);
+}
+
+.edit-user .content .message {
+	text-align: right;
+	max-width: 750px;
+	margin-top: 20px;
+}
+
+.edit-user .content .message span {
+	color: var(--mm-grey-color);
+}
+
+.edit-user .content .delete-button.hide {
+	display: none;
+}
+
+.edit-user .content .confirmation.hide {
+	display: none;
+}
+
+.edit-user .content .confirmation p {
+	margin-bottom: 8px;
+}
+
+.edit-user .content .confirmation .buttons {
+	justify-content: flex-start;
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+	.edit-user .content fieldset {
+		flex-direction: column;
+		max-width: 100%;
+		padding: 40px 0;
+	}
+
+	.edit-user .content fieldset .title,
+	.edit-user .content fieldset .fields {
+		width: 100%;
+	}
+
+	.edit-user .content fieldset .title {
+		padding-right: 0;
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 576px) {
+	.edit-user {
+		padding-top: 30px;
+		padding-bottom: 60px;
+	}
+
+	.edit-user .content fieldset .fields .field label {
+		color: var(--mm-black-color);
+	}
+
+	.edit-user .content fieldset .title p {
+		font-size: 18px;
+	}
+
+	.edit-user .content .buttons {
+		flex-direction: column-reverse;
+	}
+
+	.edit-user .content .buttons .submit {
+		margin-left: 0;
+		margin-bottom: 20px;
+	}
+
+	.edit-user .content .buttons button {
+		width: 100%;
+	}
+
+	.edit-user .content fieldset:last-of-type {
+		padding-bottom: 60px;
+	}
+}

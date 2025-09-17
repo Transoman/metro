@@ -1,0 +1,14 @@
+#to-update-list{
+    margin: 40px 0;
+    width: auto;
+    max-height: 800px;
+    overflow: scroll;
+    font-size: var(--mm-body-sm-text-size);
+}
+#to-update-list td{
+    border: 1px solid #DDD;
+    padding: 4px 10px;
+}
+#to-update-list .odd{
+    background-color: #FAFAFA;
+}

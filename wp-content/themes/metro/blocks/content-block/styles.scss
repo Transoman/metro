@@ -1,0 +1,104 @@
+@import "~css/_mixins.scss";
+
+.mm-content .content {
+    padding: 100px 0;
+    border-bottom: var(--mm-border-style) var(--mm-placeholder-grey-1);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.mm-content.no-padding .content{
+    padding: 0;
+    border-bottom: 0;
+}
+.mm-content.full-bg .content {
+    border-bottom: none;
+}
+.mm-content .mm-content__head {
+    margin-bottom: 40px;
+}
+.mm-content .mm-content__head h2 {
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    width: 100%;
+}
+.mm-content .mm-content__head p {
+    font-size: var(--mm-small-heading-font-size);
+    color: var(--mm-grey-color);
+    font-weight: bold;
+}
+.mm-content__img {
+    width: calc(41% - 13px);
+    display: flex;
+    align-self: baseline;
+}
+.mm-content__img img{
+    width: 100%;
+}
+.mm-content__img[data-radius="true"] img {
+    border-radius: var(--mm-border-radius);
+}
+.mm-content__description {
+    width: calc(59% - 13px);
+}
+.mm-content .mm-content__text *:not(h1,h2,h3,h4,h5,h6) {
+    color: var(--mm-grey-color);
+}
+.mm-content .mm-content__text h2{
+    font-size: 24px;
+}
+.mm-content .mm-content__text > :first-child {
+    margin-top: 0;
+}
+.mm-content .mm-content__text > :last-child {
+    margin-bottom: 0;
+}
+.mm-content .mm-content__text p {
+    margin: 11px 0;
+}
+.mm-content .mm-content__text a{
+    text-decoration: underline;
+}
+.mm-content .mm-content__text ul {
+    list-style: unset;
+    padding-left: 27px;
+    margin: 11px 0;
+}
+.mm-content .mm-content__text ul + p {
+    margin-top: 40px;
+}
+
+@media (min-width: 769px) {
+    .mm-content__img[data-position="right"] {
+        order: 1;
+        width: calc(32.8% - 13px);
+    }
+    .mm-content__img[data-position="right"] + .mm-content__description {
+        width: calc(67.2% - 13px);
+    }
+}
+@media (max-width: 768px) {
+    .mm-content .content {
+        padding: 60px 0;
+    }
+    .mm-content__img {
+        margin-bottom: 40px;
+    }
+    .mm-content__img,
+    .mm-content__description {
+        width: 100%;
+    }
+}
+@media (max-width: 576px) {
+    .mm-content .mm-content__head {
+        margin-bottom: 30px;
+    }
+    .mm-content .mm-content__text ul {
+        padding-left: 23px;
+    }
+    .mm-content .mm-content__text ul + p  {
+        margin-top: 30px;
+    }
+}
+
+

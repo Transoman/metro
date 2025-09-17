@@ -1,0 +1,134 @@
+@import "~css/_mixins.scss";
+@import "swiper/css";
+@import "~css/listing-card.scss";
+.featured-spaces {
+	padding-top: 30px;
+	.content {
+		h2 {
+			text-align: center;
+		}
+		.tabs {
+			display: flex;
+			max-width: 670px;
+			justify-content: center;
+			margin: 0 auto;
+			padding-top: 40px;
+			border-bottom: var(--mm-border-style) var(--mm-placeholder-grey-1);
+			li {
+				font-size: var(--mm-body-sm-text-size);
+				line-height: var(--mm-body-text-line-height);
+				letter-spacing: 0.1em;
+				color: var(--mm-grey-color);
+				font-weight: 700;
+				text-transform: uppercase;
+				transition: background-color .1s ease;
+				&:hover {
+					background-color: var(--mm-blue-grey-color);
+				}
+				a {
+					font-size: inherit;
+					letter-spacing: inherit;
+					line-height: inherit;
+					color: inherit;
+					font-weight: inherit;
+					padding: 14px 30px 14px;
+					display: block;
+				}
+			}
+		}
+		.blocks {
+			display: flex;
+			flex-wrap: wrap;
+			padding-top: 60px;
+			margin: 0 -14.99px;
+			.swiper-wrapper {
+				flex-wrap: wrap;
+			}
+		}
+		.swiper-slide.block {
+			width: 33.333%;
+			padding: 15px;
+			height: auto;
+		}
+		.show-properties {
+			border-radius: var(--mm-button-radius);
+			color: var(--mm-blue-color);
+			line-height: 20.4px;
+			padding: 16.3px 9px;
+			border: 1px solid var(--mm-blue-color);
+			display: block;
+			max-width: 209px;
+			margin: 50px auto 30px;
+			font-weight: 700;
+			text-align: center;
+			transition: background .1s ease;
+			&:hover {
+				background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), var(--mm-white-color);
+			}
+			span {
+				color: inherit;
+				line-height: inherit;
+				font-weight: 700;
+			}
+		}
+	}
+}
+@media (max-width: 992px) {
+	.featured-spaces {
+		.content {
+			.tabs {
+				li {
+					font-size: var(--mm-body-xs-text-size);
+				}
+			}
+			.swiper-slide.block {
+				width: 50%;
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+	.featured-spaces {
+		padding-top: 25px;
+		.content {
+			.tabs {
+				li {
+					a {
+						padding: 15px;
+					}
+				}
+				padding-top: 50px;
+			}
+			.show-properties {
+				margin: 40px auto 20px;
+			}
+		}
+	}
+}
+@media (max-width: 576px) {
+	.featured-spaces {
+		padding-top: 43px;
+		.content {
+			.tabs {
+				display: none;
+			}
+			.blocks {
+				.swiper-wrapper {
+					flex-wrap: unset;
+					padding-bottom: 5px;
+				}
+				padding-top: 40px;
+				margin: 0 -20px;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			.swiper-slide.block {
+				padding: 0;
+			}
+			.show-properties {
+				max-width: 220px;
+				margin-top: 35px;
+			}
+		}
+	}
+}

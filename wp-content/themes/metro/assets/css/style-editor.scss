@@ -1,0 +1,45 @@
+@import "styles.scss";
+
+div.acf-block-preview {
+	@extend %body;
+
+    button, a{
+        pointer-events: none;
+    }
+
+	.types-blocks{
+		.inner-content{
+			.block{
+				.bottom{
+					.text{
+						.button{
+							background-color: transparent;
+                            border: 0;
+							button{
+                                color: var(--mm-white-color);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+    .building-blocks{
+        .inner-content{
+            .swiper{
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 782px) {
+    .interface-complementary-area {
+        width: 470px;
+    }
+}
+
+.block-editor-block-list__layout .wp-block {
+    max-width: 100%;
+}

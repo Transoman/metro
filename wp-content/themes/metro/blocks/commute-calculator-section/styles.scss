@@ -1,0 +1,401 @@
+@import "~css/_mixins.scss";
+@import "swiper/css";
+
+.commute-calculator{
+    padding-top: 100px;
+}
+
+.commute-calculator .message{
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: var(--mm-border-radius);
+    background: var(--mm-primary-bg-color);
+    padding: 30px;
+    display: none;
+    align-items: flex-start;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.commute-calculator .message.show{
+    display: flex;
+}
+
+.commute-calculator .message .icon{
+    flex-shrink: 0;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 139, 2, 0.15);
+    border-radius: 50%;
+    position: relative;
+}
+
+.commute-calculator .message .icon::after{
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    mask-size: cover;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-image: var(--warning-icon);
+    background-color: #FF8B02;
+}
+
+.commute-calculator .message .text h4{
+    color: var(--mm-new-heading-color);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.commute-calculator .message .text p{
+    color: var(--mm-grey-color);
+}
+
+.commute-calculator .message .button{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+
+.commute-calculator .message .button button{
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+}
+
+.commute-calculator .content{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+    border-bottom: 1px solid var(--mm-placeholder-grey-1);
+    position: relative;
+}
+
+.commute-calculator .content .calculator, .commute-calculator .content .map{
+    width: 65.8%;
+}
+
+.commute-calculator .content .calculator input.invalid{
+    outline: 2px solid #CA0404;
+}
+
+.commute-calculator .content .calculator input::placeholder{
+    color: var(--mm-placeholder-grey-color);
+}
+
+.commute-calculator .content .result{
+    width: 34.2%;
+    padding-left: 30px;
+    position: sticky;
+    top: 20px;
+}
+
+.commute-calculator .content .heading{
+    margin-bottom: 40px;
+}
+
+.commute-calculator .content .heading span{
+    color: var(--mm-navy-color);
+    font-size: var(--mm-body-sm-text-size);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.commute-calculator .content .heading h2{
+    font-size: 24px;
+    color: var(--mm-navy-color);
+    margin-bottom: 40px;
+}
+
+.commute-calculator .content .heading p{
+    color: var(--mm-grey-color);
+}
+
+.commute-calculator .content .form{
+    padding: 60px;
+    background: var(--mm-blue-grey-color);
+    border-radius: var(--mm-border-radius);
+    border: 1px solid var(--mm-border-color);
+}
+
+.commute-calculator .content .form label{
+    font-weight: 700;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.commute-calculator .content .form .field{
+    margin-bottom: 40px;
+}
+
+.commute-calculator .content .form .error{
+    font-size: var(--mm-body-xs-text-size);
+    color: var(--mm-error-color);
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.commute-calculator .content .result .block{
+    background: var(--mm-blue-grey-color);
+    border: 1px solid var(--mm-border-color);
+    border-radius: var(--mm-border-radius);
+    padding: 0 30px 60px;
+    position: sticky;
+    top: 20px;
+}
+
+.commute-calculator .content .result .block .image{
+    margin-bottom: 20px;
+}
+
+.commute-calculator .content .result .block .image img{
+    width: 100%;
+}
+
+.commute-calculator .content .result .title{
+    color: var(--mm-navy-color);
+    margin-bottom: 20px;
+}
+
+.commute-calculator .content .result label {
+    display: flex;
+    align-items: center;
+}
+
+.commute-calculator .content .result label img{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.commute-calculator .content .result label span{
+    color: var(--mm-grey-color);
+}
+
+.commute-calculator .content .result .input{
+    display: flex;
+    align-items: center;
+    padding: 7px 10px;
+    border-top: 1px solid var(--mm-border-color);
+    border-bottom: 1px solid var(--mm-border-color);
+    position: relative;
+}
+
+.commute-calculator .content .result .input:before{
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--mm-navy-color);
+    opacity: .04;
+    position: absolute;
+}
+
+.commute-calculator .content .result .input:nth-of-type(2n){
+    border-top: 0;
+    border-bottom: 0;
+    background: transparent;
+}
+
+.commute-calculator .content .result .input:nth-of-type(2n):before{
+    content: none;
+}
+
+.commute-calculator .content .result .input input{
+    max-width: 144px;
+    background: rgba(0, 0, 0, .04);
+    outline: 0;
+    padding: 4.6px 20px;
+    border: 1px solid var(--mm-placeholder-grey-2);
+}
+
+.commute-calculator .content .result .title{
+    font-family: var(--mm-secondary-font-family);
+}
+
+.commute-calculator .content .result .field{
+    position: relative;
+    margin-left: auto;
+}
+
+.commute-calculator .content .result .field span{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--mm-navy-color);
+}
+
+.commute-calculator .content .map{
+    display: none;
+    margin-top: 40px;
+}
+
+.commute-calculator .content .map.show{
+    display: block;
+}
+
+.commute-calculator .content .map h3{
+    font-family: var(--mm-primary-font-family);
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.commute-calculator .content .map #result-map{
+    height: 354px;
+    width: 100%;
+}
+
+
+@media (max-width: 1200px) {
+    .commute-calculator .content .result{
+        width: 44.2%;
+    }
+
+    .commute-calculator .content .calculator, .commute-calculator .content .map{
+        width: 55.8%;
+    }
+}
+
+@media (max-width: 992px) {
+    .commute-calculator .content .result{
+        width: 100%;
+        padding-left: 0;
+        top: unset;
+        position: relative;
+        margin-top: 60px;
+    }
+
+    .commute-calculator .content .result .block{
+        position: relative;
+        top: unset;
+    }
+
+    .commute-calculator .content .calculator, .commute-calculator .content .map{
+        width: 100%;
+    }
+
+    .commute-calculator .content .map{
+        padding-top: 60px;
+        margin-top: 0;
+    }
+
+}
+
+@media(max-width: 768px){
+    
+}
+
+@media (max-width: 576px) {
+    .commute-calculator{
+        padding-top: 40px;
+    }
+
+    .commute-calculator .message{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 13;
+        margin-top: 0;
+        background: var(--mm-blue-grey-color);
+        align-items: unset;
+        padding: 0;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+
+    .commute-calculator .message .icon{
+        display: none;
+    }
+
+    .commute-calculator .message .button{
+        position: relative;
+        top: unset;
+        right: unset;
+        height: 60px;
+        border-bottom: 1px solid var(--mm-secondary-border-color);
+        padding: 20px;
+    }
+
+    .commute-calculator .message .button button{
+        margin-left: auto;
+    }
+
+    .commute-calculator .message .button button svg{
+        width: 20px;
+        height: 20px;
+    }
+
+    .commute-calculator .message .text{
+        padding: 40px 20px;
+    }
+
+    .commute-calculator .message .text h4{
+        font-family: var(--mm-secondary-font-family);
+        font-size: 17px;
+        color: var(--mm-navy-color);
+        margin-bottom: 40px;
+    }
+
+    .commute-calculator .content .heading h2{
+        font-size: 17px;
+        margin-bottom: 50px;
+    }
+
+    .commute-calculator .content .heading span{
+        font-size: 14px;
+    }
+
+    .commute-calculator .content .form{
+        padding: 30px;
+    }
+
+    .commute-calculator .content .form label{
+        margin-bottom: 10px;
+    }
+
+    .commute-calculator .content .form .field{
+        margin-bottom: 20px;
+    }
+
+    .commute-calculator .content .form button{
+        width: 100%;
+    }
+
+    .commute-calculator .content .result .heading h2{
+        margin-bottom: 40px;
+    }
+
+    .commute-calculator .content .heading p{
+        display: none;
+    }
+
+    .commute-calculator .content .result .block{
+        padding: 0 20px 20px;
+    }
+
+    .commute-calculator .content .result .input input{
+        max-width: 110px;
+    }
+
+    .commute-calculator .content .map #result-map{
+        aspect-ratio: 1 / 1;
+        height: auto;
+    }
+
+    .commute-calculator .content{
+        padding-bottom: 60px;
+    }
+}

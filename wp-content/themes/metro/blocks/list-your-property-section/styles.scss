@@ -1,0 +1,395 @@
+@import "~css/_mixins.scss";
+
+.list-your-property .content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 100px 0 50px;
+    position: relative;
+}
+.list-your-property .content .form-part{
+    width: 68.43%;
+    padding-right: 30px;
+}
+
+.list-your-property .content p{
+    color: var(--mm-grey-color);
+}
+
+.list-your-property .content .form-part .wrapper{
+    padding-right: 40px;
+    border-right: 1px solid var(--mm-placeholder-grey-1);
+}
+
+.list-your-property .content label{
+    display: none;
+}
+
+.list-your-property .content .contact-part{
+    position: sticky;
+    top: 230px;
+    padding-bottom: 250px;
+    width: 31.57%;
+}
+
+.list-your-property .content .contact-part .wrapper{
+    padding-bottom: 100px;
+    border-bottom: 1px solid var(--mm-placeholder-grey-1);
+}
+
+.list-your-property.no-banner .content .contact-part{
+    padding-bottom: 0;
+}
+
+.list-your-property .content .form-part h2{
+    margin-bottom: 50px;
+}
+
+.list-your-property .content .contact-part h2{
+    margin-bottom: 40px;
+}
+
+.list-your-property .content .contact-part .button{
+    border: 1px solid var(--mm-navy-color);
+    color: var(--mm-navy-color);
+    border-radius: var(--mm-button-radius);
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    padding: 12.1094px 29px 12.1093px 31px;
+    font-weight: 700;
+    margin-top: 40px;
+}
+
+.list-your-property .content .contact-part .button:hover{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), var(--mm-white-color);
+}
+
+.list-your-property .content .contact-part .button .icon{
+    margin-right: 10px;
+}
+
+.list-your-property .content .contact-part .button span{
+    color: inherit;
+}
+
+.list-your-property .content .form-part .text{
+    border-bottom: 1px solid var(--mm-placeholder-grey-1);
+    padding-bottom: 50px;
+    margin-bottom: 60px;
+}
+
+.list-your-property .content .form-part span.step{
+    color: var(--mm-navy-color);
+    font-size: var(--mm-body-sm-text-size);
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.list-your-property .content .form-part span.step:nth-of-type(2){
+    margin-top: 100px;
+}
+
+.list-your-property .content .form-part form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.list-your-property .content .form-part h3{
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.list-your-property .content .form-part .field{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.list-your-property .content .form-part .field input, .list-your-property .content .form-part .field textarea{
+    border: 1px solid var(--mm-placeholder-grey-2);
+}
+
+.list-your-property .content .form-part .field.half{
+    width: calc(50% - 10px);
+}
+
+.list-your-property .content .form-part h4{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-family: var(--mm-primary-font-family);
+}
+
+.list-your-property .content .form-part .checkboxes{
+    width: 100%;
+}
+
+.list-your-property .content .form-part .checkboxes .wpcf7-form-control-wrap{
+    width: 100%;
+    display: block;
+}
+
+.list-your-property .content .form-part .checkboxes .wpcf7-form-control-wrap .wpcf7-form-control{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -20px;
+}
+
+.list-your-property .content .form-part .checkboxes .wpcf7-form-control-wrap .wpcf7-list-item{
+    width: 33.333%;
+    margin: 0 0 20px;
+}
+
+.list-your-property .content .form-part .checkboxes .wpcf7-form-control-wrap .wpcf7-list-item input{
+    width: auto;
+    margin-right: 10px;
+    outline: 0;
+    opacity: 0;
+}
+
+.list-your-property .content .form-part .checkboxes .wpcf7-form-control-wrap .wpcf7-list-item label{
+    display: flex;
+    align-items: center;
+}
+
+.list-your-property .content .form-part .checkboxes .wpcf7-form-control-wrap .wpcf7-list-item .wpcf7-list-item-label{
+    position: relative;
+    color: var(--mm-grey-color);
+}
+
+.list-your-property .content .form-part .checkboxes .wpcf7-form-control-wrap .wpcf7-list-item .wpcf7-list-item-label:before{
+    content: '';
+    display: block;
+    width: 13px;
+    height: 13px;
+    border: 1px solid var(--mm-placeholder-grey-2);
+    border-radius: 3px;
+    background: var(--mm-primary-bg-color);
+    position: absolute;
+    left: -24px;
+    top: 4px;
+}
+
+.list-your-property .content .form-part .checkboxes .wpcf7-form-control-wrap .wpcf7-list-item input:checked ~ .wpcf7-list-item-label:before{
+    background: var(--mm-blue-color);
+    border-color: var(--mm-blue-color);
+}
+
+.list-your-property .content .form-part .checkboxes .wpcf7-form-control-wrap .wpcf7-list-item input:checked ~ .wpcf7-list-item-label:after{
+    content: '';
+    display: block;
+    width: 8px;
+    height: 4px;
+    position: absolute;
+    left: -21px;
+    top: 7px;
+    border-bottom: 2px solid var(--mm-white-color);
+    border-left: 2px solid var(--mm-white-color);
+    transform: rotate(-45deg);
+}
+
+
+.list-your-property .content .form-part button{
+    background: var(--mm-yellow-color);
+    color: var(--mm-navy-color);
+    font-weight: 700;
+    text-transform: capitalize;
+    border: 0;
+    cursor: pointer;
+    border-radius: var(--mm-button-radius);
+    padding: 15.12px 30px;
+    margin-top: 40px;
+}
+
+.list-your-property .content .form-part button:hover{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), var(--mm-yellow-color);
+}
+
+.list-your-property .content .banner-part{
+    width: 100%;
+    padding: 43px 40px;
+    margin-top: 100px;
+    box-shadow: 0px 100px 40px rgba(0, 0, 0, 0.01), 0px 56px 34px rgba(0, 0, 0, 0.02), 0px 25px 25px rgba(0, 0, 0, 0.03), 0px 6px 14px rgba(0, 0, 0, 0.04), 0px 0px 0px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--mm-border-color);
+    border-radius: var(--mm-border-radius);
+}
+
+.list-your-property .content .banner-part .blocks{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0px -14.99px;
+}
+
+.list-your-property .content .banner-part .block{
+    width: 33.333%;
+    padding: 0 15px;
+}
+
+.list-your-property .content .banner-part .block .inner{
+    display: flex;
+    align-items: flex-start;
+}
+
+.list-your-property .content .banner-part .block .inner .image{
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    display: flex;
+    margin-right: 10px;
+}
+
+.list-your-property .content .banner-part .block .inner p{
+    color: var(--mm-grey-color);
+}
+
+@media(max-width: 1200px){
+
+}
+
+@media(max-width: 992px){
+
+}
+
+@media(max-width: 768px){
+    .list-your-property .content {
+        padding: 60px 0;
+    }
+
+    .list-your-property .content .form-part{
+        order: 1;
+        border-bottom: 1px solid var(--mm-border-color);
+        padding-bottom: 50px;
+        margin-bottom: 0;
+    }
+
+    .list-your-property .content .contact-part{
+        order: 3;
+        border-top: 0;
+        padding-top: 50px;
+    }
+
+    .list-your-property .content .contact-part .wrapper{
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .list-your-property .content .banner-part{
+        order: 2;
+        margin-top: 50px;
+    }
+
+    .list-your-property .content .form-part, .list-your-property .content .contact-part{
+        width: 100%;
+    }
+
+    .list-your-property .content .contact-part{
+        padding-bottom: 0;
+    }
+
+    .list-your-property .content .form-part, .list-your-property .content .form-part .wrapper{
+        padding-right: 0;
+    }
+
+    .list-your-property .content .form-part .wrapper{
+        border-right: 0;
+    }
+
+    .list-your-property .content .banner-part .block{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .list-your-property .content .banner-part .block:last-of-type{
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .list-your-property .content{
+        border-bottom: 0;
+        padding: 60px 0 10px;
+    }
+
+    .list-your-property .content .form-part h2{
+        margin-bottom: 30px;
+    }
+
+    .list-your-property .content .form-part .text{
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+    }
+
+    .list-your-property .content .form-part span.step{
+        font-size: 14px;
+    }
+
+    .list-your-property .content .form-part .field.half{
+        width: 100%;
+    }
+
+    .list-your-property .content .form-part .field input{
+        padding: 8.5px 20px;
+    }
+
+    .list-your-property .content .form-part h4{
+        margin-top: 20px;
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .list-your-property .content .form-part .checkboxes .wpcf7-form-control-wrap .wpcf7-list-item{
+        width: 50%;
+    }
+
+    .list-your-property .content .form-part .checkboxes{
+        margin-bottom: 20px;
+    }
+
+    .list-your-property .content .form-part span.step:nth-of-type(2){
+        margin-top: 40px;
+    }
+
+    .list-your-property .content .form-part button{
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .list-your-property .content .form-part{
+        padding-bottom: 40px;
+    }
+
+    .list-your-property .content .banner-part{
+        margin-top: 60px;
+        padding: 30px 20px;
+        margin-bottom: 60px;
+    }
+
+    .list-your-property .content .banner-part .block .inner .image{
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+    }
+
+    .list-your-property .content .contact-part{
+        padding-top: 60px;
+    }
+
+    .list-your-property .content .contact-part h2{
+        margin-bottom: 30px;
+    }
+
+    .list-your-property .content .contact-part .button{
+        width: 100%;
+        border: 1px solid var(--mm-blue-color);
+        color: var(--mm-blue-color);
+        justify-content: center;
+    }
+
+    .list-your-property .content .contact-part .button .icon svg path{
+        fill: var(--mm-blue-color);
+    }
+}

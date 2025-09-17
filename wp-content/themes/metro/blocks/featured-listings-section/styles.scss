@@ -1,0 +1,123 @@
+@import "~css/_mixins.scss";
+@import "swiper/css";
+@import "swiper/css/grid";
+@import "~css/optional-style.scss";
+@import "~css/listing-card.scss";
+
+.featured-listings {
+    padding-top: 100px;
+    padding-bottom: 60px;
+}
+
+.featured-listings.border-bottom{
+    border-bottom: 1px solid var(--mm-placeholder-grey-1);
+}
+
+.featured-listings .heading {
+    margin-bottom: 50px;
+}
+
+.featured-listings.default .swiper{
+    margin: 0 -14.99px;
+}
+
+.featured-listings .swiper{
+    margin: 0 -9.9px;
+}
+
+.featured-listings .swiper .swiper-wrapper {
+    flex-direction: unset;
+    margin: 0;
+}
+
+.featured-listings .swiper .swiper-wrapper .block{
+    padding: 0;
+}
+
+.featured-listings.default .swiper-slide {
+    margin-bottom: 40px;
+    height: auto;
+    padding: 0 15px;
+}
+
+.featured-listings .block {
+    height: 100%;
+}
+
+.featured-listings.standard .swiper{
+    padding: 10px;
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+    .featured-listings .inner {
+        flex-direction: column;
+    }
+
+    .featured-listings .swiper .swiper-wrapper .block.horizontal{
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+    .featured-listings{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .featured-listings .heading{
+        margin-bottom: 35px;
+    }
+
+    .featured-listings .swiper {
+        margin: 0 -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .featured-listings.default .swiper{
+        margin: 0 -20px;
+    }
+
+    .featured-listings .swiper .swiper-wrapper{
+        padding: 5px 0;
+    }
+
+    .featured-listings .swiper-slide {
+        padding: 0;
+        margin-bottom: 1px;
+        margin-top: 0 !important;
+    }
+
+    .featured-listings.default .swiper-slide{
+        padding: 0;
+    }
+
+    .featured-listings .heading a:not(.default-link) {
+        display: none;
+    }
+
+    .featured-listings.standard{
+        background: var(--mm-primary-bg-color);
+        padding-top: 0;
+        border-bottom: 0;
+        padding-bottom: 55px;
+    }
+
+    .featured-listings.standard .content{
+        border-top: 1px solid var(--mm-border-color);
+        padding-top: 60px;
+    }
+
+    .featured-listings.standard .swiper{
+        padding: 0 20px;
+    }
+
+}
