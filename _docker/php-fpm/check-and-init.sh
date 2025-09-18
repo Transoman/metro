@@ -32,6 +32,8 @@ fi
 SITEURL=$(wp --allow-root eval 'echo get_option("siteurl");')
 if [ "${SITEURL}" != "" ] && [ "${SITEURL}" != "${ENV_HOST}" ]; then
   wp --allow-root --no-color --skip-themes search-replace ${SITEURL} ${ENV_HOST} --all-tables
+  wp --allow-root cache flush
+  wp --allow-root rewrite flush
 fi
 
 wp --allow-root --no-color --skip-themes search-replace http:// https:// --all-tables
