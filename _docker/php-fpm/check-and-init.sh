@@ -7,16 +7,12 @@ else
 fi
 
 cd /var/www/html;
-if [ ! -f wp-config.php ]; then
-    # while [ "$(mysqlshow --user=${WORDPRESS_DB_USER} --password=${WORDPRESS_DB_PASSWORD} --host=${WORDPRESS_DB_HOST} ${WORDPRESS_DB_NAME} | grep -v Wildcard | grep -o ${WORDPRESS_DB_NAME})" != "${WORDPRESS_DB_NAME}" ]; do
-    #     sleep 5
-    # done
 
-    while ! mysql --user=${WORDPRESS_DB_USER} --password=${WORDPRESS_DB_PASSWORD} --host=${WORDPRESS_DB_HOST} \
-        -e "SHOW DATABASES LIKE '${WORDPRESS_DB_NAME}'" | grep -q ${WORDPRESS_DB_NAME}; do
-      sleep 5
-    done
+until mysqladmin ping -h"${WORDPRESS_DB_HOST}" -u"$WORDPRESS_DB_USER" -p"$WORDPRESS_DB_PASSWORD" --silent; do
+      sleep 2
+done
 
+if ! wp core is-installed --allow-root; then
     wp --allow-root core config --skip-plugins --skip-themes --dbname="${WORDPRESS_DB_NAME}" --dbuser="${WORDPRESS_DB_USER}" --dbpass="${WORDPRESS_DB_PASSWORD}" --dbhost="${WORDPRESS_DB_HOST}" --dbprefix="${WORDPRESS_TABLE_PREFIX}"
 		wp --allow-root config set DB_CHARSET '"utf8"' --raw
     wp --allow-root config set DB_COLLATE '"utf8_unicode_ci"' --raw
@@ -35,7 +31,7 @@ fi
 
 SITEURL=$(wp --allow-root eval 'echo get_option("siteurl");')
 if [ "${SITEURL}" != "" ] && [ "${SITEURL}" != "${ENV_HOST}" ]; then
-  wp --allow-root --no-color --skip-themes search-replace ${SITEURL} ${ENV_HOST} --all-tables
+  wp --allow-root --no-color --skip-themes --skip-plugins search-replace ${SITEURL} ${ENV_HOST} --all-tables
 fi
 
 wp --allow-root --no-color --skip-themes search-replace http:// https:// --all-tables
