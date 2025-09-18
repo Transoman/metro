@@ -1,0 +1,35 @@
+/* cf7-partial-admin.css */
+
+.widefat th.sortable {
+    cursor: pointer;
+    position: relative;
+    background-color: #f9f9f9;
+}
+
+th .sort-icon::after {
+    content: "▲";
+    font-size: 1em;
+    color: #0073aa;
+}
+
+th.sortable.asc .sort-icon::after {
+    content: "▲";
+}
+
+th.sortable.desc .sort-icon::after {
+    content: "▼";
+}
+
+.widefat th.sortable:hover {
+    background-color: #eaeaea;
+    color: #333;
+}
+
+form button.read-more-button {
+    background-color: transparent;
+    border: 0;
+    color: #0273aa;
+    text-decoration: underline;
+    padding-left: 0;
+    padding-top: 6px;
+}

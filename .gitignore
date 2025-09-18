@@ -4,8 +4,10 @@ database*
 wp-content/uploads/*
 wp-content/upgrade/*
 wp-content/plugins/*
-!wp-content/plugins/customer-inquiries-area
+!wp-content/plugins/cf7-partial-submissions
+!wp-content/plugins/cf7-submissions
 !wp-content/plugins/cornerstone-posts-dashboard
+!wp-content/plugins/customer-inquiries-area
 !wp-content/plugins/mm-external-link-fixer
 !wp-content/plugins/mm-mailto-fallback-share
 !wp-content/plugins/mm-openai-chat
