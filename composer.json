@@ -44,12 +44,9 @@
 			"@php -r \"file_exists('.env') || copy('.env.sample', '.env');\""
 		],
 		"post-install-cmd": [
-			"@php -r \"file_exists('.env') || copy('.env.sample', '.env');\"",
-			"cd wp-content/plugins/wordpress-seo-premium && composer install --no-dev -o"
+			"@php -r \"file_exists('.env') || copy('.env.sample', '.env');\""
 		],
-		"post-update-cmd": [
-			"cd wp-content/plugins/wordpress-seo-premium && composer install --no-dev -o"
-		],
+		"post-update-cmd": [],
 		"pre-install-cmd": [
 		]
 	},
@@ -172,7 +169,6 @@
 		"wpackagist-plugin/wp-crontrol": "1.16.3",
 		"wpackagist-plugin/zoho-salesiq": "2.0.4",
 		"wpengine/advanced-custom-fields-pro": "6.3.1",
-		"yoast/wordpress-seo-premium": "25.9",
 		"zohoflow/zohoflow": "2.6.0",
 		"zohomail/zeptomail": "3.1.1"
 	}
