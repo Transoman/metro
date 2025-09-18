@@ -41,9 +41,11 @@
 	},
 	"scripts": {
 		"post-root-package-install": [
-			"@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+			"@php -r \"file_exists('.env') || copy('.env.sample', '.env');\""
 		],
-		"post-install-cmd": [],
+		"post-install-cmd": [
+			"@php -r \"file_exists('.env') || copy('.env.sample', '.env');\""
+		],
 		"post-update-cmd": [],
 		"pre-install-cmd": [
 		]
@@ -141,7 +143,7 @@
 			"type": "package",
 			"package": {
 				"name": "package/wordpress-seo",
-				"version": "22.9",
+				"version": "25.9",
 				"type": "wordpress-plugin",
 				"dist": {
 					"type": "zip",
@@ -159,7 +161,7 @@
 		"mike.zwobble/mammoth-docx-converter": "1.21.0",
 		"nextendweb/nextend-facebook-connect": "3.1.13",
 		"nextendweb/nextend-social-login-pro": "3.1.13",
-		"package/wordpress-seo": "22.9",
+		"package/wordpress-seo": "25.9",
 		"wpackagist-plugin/all-in-one-wp-migration": "^7.99",
 		"wpackagist-plugin/contact-form-entries": "1.4.0",
 		"wpackagist-plugin/image-alt-text": "2.0.0",
@@ -167,7 +169,7 @@
 		"wpackagist-plugin/wp-crontrol": "1.16.3",
 		"wpackagist-plugin/zoho-salesiq": "2.0.4",
 		"wpengine/advanced-custom-fields-pro": "6.3.1",
-		"yoast/wordpress-seo-premium": "22.9",
+		"yoast/wordpress-seo-premium": "25.9",
 		"zohoflow/zohoflow": "2.6.0",
 		"zohomail/zeptomail": "3.1.1"
 	}
