@@ -44,9 +44,12 @@
 			"@php -r \"file_exists('.env') || copy('.env.sample', '.env');\""
 		],
 		"post-install-cmd": [
-			"@php -r \"file_exists('.env') || copy('.env.sample', '.env');\""
+			"@php -r \"file_exists('.env') || copy('.env.sample', '.env');\"",
+			"cd wp-content/plugins/wordpress-seo-premium && composer install --no-dev -o"
 		],
-		"post-update-cmd": [],
+		"post-update-cmd": [
+			"cd wp-content/plugins/wordpress-seo-premium && composer install --no-dev -o"
+		],
 		"pre-install-cmd": [
 		]
 	},
