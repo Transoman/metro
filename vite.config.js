@@ -97,14 +97,14 @@ export default defineConfig(({ mode }) => {
 					])
 				),
 				output: {
-					// Для JS-файлів, що є точками входу (entry points)
+					// For JS files that are entry points
 					entryFileNames: (chunkInfo) => {
 						const name = path.basename(chunkInfo.name);
 						// Результат: assets/scripts-a1b2c3d4.js
 						return `assets/${name}-[hash].js`;
 					},
 					
-					// Для CSS, зображень, шрифтів та інших ассетів
+					// For CSS, images, fonts, and other assets
 					assetFileNames: (assetInfo) => {
 						const fullName = path.basename(assetInfo.names[0]);
 						const ext = path.extname(fullName);
@@ -113,7 +113,7 @@ export default defineConfig(({ mode }) => {
 						return `assets/${name}-[hash]${ext}`;
 					},
 					
-					// Для динамічно імпортованих JS-чанків
+					// For dynamically imported JS chunks
 					chunkFileNames: `assets/[name]-[hash].js`,
 				},
 				// glob
