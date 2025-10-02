@@ -100,7 +100,7 @@ export default defineConfig(({ mode }) => {
 					// For JS files that are entry points
 					entryFileNames: (chunkInfo) => {
 						const name = path.basename(chunkInfo.name);
-						// Результат: assets/scripts-a1b2c3d4.js
+						// Result: assets/scripts-a1b2c3d4.js
 						return `assets/${name}-[hash].js`;
 					},
 					
