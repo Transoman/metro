@@ -109,7 +109,7 @@ export default defineConfig(({ mode }) => {
 						const fullName = path.basename(assetInfo.names[0]);
 						const ext = path.extname(fullName);
 						const name = path.basename(fullName, ext);
-						// Результат: assets/style-e5f6g7h8.css
+						// Result: assets/style-e5f6g7h8.css
 						return `assets/${name}-[hash]${ext}`;
 					},
 					
