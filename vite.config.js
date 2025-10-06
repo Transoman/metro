@@ -103,7 +103,7 @@ export default defineConfig(({ mode }) => {
 						// Result: assets/scripts-a1b2c3d4.js
 						return `assets/${name}-[hash].js`;
 					},
-					
+
 					// For CSS, images, fonts, and other assets
 					assetFileNames: (assetInfo) => {
 						const fullName = path.basename(assetInfo.names[0]);
@@ -112,7 +112,7 @@ export default defineConfig(({ mode }) => {
 						// Result: assets/style-e5f6g7h8.css
 						return `assets/${name}-[hash]${ext}`;
 					},
-					
+
 					// For dynamically imported JS chunks
 					chunkFileNames: `assets/[name]-[hash].js`,
 				},
@@ -144,13 +144,6 @@ export default defineConfig(({ mode }) => {
 				// 		themeRoot + "/assets/css/404.scss",
 				// 		themeRoot + "/assets/css/template-with-sidebar.scss",
 				// 	]),
-
-				/*
-		output: {
-			entryFileNames: `[name].js`,
-			chunkFileNames: `[name].js`,
-			assetFileNames: `[name].[ext]`
-		}*/
 			},
 
 			// minifying switch
