@@ -121,7 +121,6 @@ export default defineConfig(({ mode }) => {
 				// 	.concat(glob.sync(themeRoot + "/assets/js/single*.js"))
 				// 	.concat(glob.sync(themeRoot + "/assets/css/single*.scss"))
 				// 	.concat([
-				// 		themeRoot + "/assets/js/template-with-sidebar.js",
 				// 		// themeRoot + "/assets/js/zoho-chat.js",
 				// 		themeRoot + "/assets/js/blog.js",
 				// 		themeRoot + "/assets/js/helpers.js",
