@@ -121,7 +121,6 @@ export default defineConfig(({ mode }) => {
 				// 	.concat(glob.sync(themeRoot + "/assets/js/single*.js"))
 				// 	.concat(glob.sync(themeRoot + "/assets/css/single*.scss"))
 				// 	.concat([
-				// 		themeRoot + "/~partytown/partytown.js",
 				// 		themeRoot + "/assets/js/scripts.js",
 				// 		themeRoot + "/assets/js/accessibility.js",
 				// 		themeRoot + "/assets/js/template-with-sidebar.js",
